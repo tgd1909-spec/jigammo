@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지감모 - 지성이면 감천, 마음이 모이는 곳</title>
     
-    <!-- [폰트 가져오기] 따뜻한 느낌의 '고운돋움(Gowun Dodum)' 폰트 -->
+    <!-- [폰트 가져오기] 고운돋움(Gowun Dodum) 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -35,8 +35,14 @@
            ========================================= */
         header {
             background-color: #FFD166; /* 메인 옐로우 */
-            padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* PC에서 메뉴가 양끝으로 찢어지지 않도록 헤더 안에도 1000px 컨테이너를 추가했습니다 */
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -89,7 +95,7 @@
             width: 100%;
             height: auto;
             margin-bottom: 20px;
-            mix-blend-mode: multiply; /* 흰색 배경을 자연스럽게 섞어줍니다 */
+            mix-blend-mode: multiply;
         }
 
         .hero h2 {
@@ -119,7 +125,7 @@
 
         .activity-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* PC에서는 2칸씩 나란히 */
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
@@ -133,7 +139,7 @@
 
         .activity-card:hover {
             border-color: #FF9F1C;
-            transform: translateY(-5px); /* 마우스를 올리면 살짝 위로 떠오릅니다 */
+            transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(255, 159, 28, 0.15);
         }
 
@@ -155,7 +161,7 @@
             margin: 0;
         }
 
-        /* 임시 이미지(Unsplash) 영역 */
+        /* 임시 이미지 영역 - 안정적인 Unsplash 주소로 교체했습니다 */
         .community-img {
             width: 100%;
             height: 300px;
@@ -170,7 +176,7 @@
            ========================================= */
         .notice-box {
             background-color: #FDFBF7;
-            border: 2px solid #FF9F1C; /* 메인 오렌지색 테두리 */
+            border: 2px solid #FF9F1C;
             border-radius: 15px;
             padding: 40px 30px;
             max-width: 700px;
@@ -189,7 +195,6 @@
             margin-bottom: 20px;
         }
 
-        /* 체크리스트 스타일 */
         .notice-list {
             list-style-type: none;
             padding: 0;
@@ -228,7 +233,7 @@
            7. 모바일 반응형 설정 (스마트폰 화면)
            ========================================= */
         @media screen and (max-width: 768px) {
-            header {
+            .header-container {
                 flex-direction: column;
                 gap: 15px;
             }
@@ -239,7 +244,7 @@
                 font-size: 26px;
             }
             .activity-grid {
-                grid-template-columns: 1fr; /* 스마트폰에서는 1칸씩 세로로 */
+                grid-template-columns: 1fr;
             }
             .community-img {
                 height: 200px;
@@ -254,14 +259,17 @@
 
     <!-- [공통 HTML 헤더 뼈대] -->
     <header>
-        <a href="index.html" class="logo">지감모</a>
-        <div class="nav-links">
-            <a href="01.html" class="menu-item">지감모 소개</a>
-            <a href="02.html" class="menu-item">활동 내역</a>
-            <a href="03.html" class="menu-item">후원 안내</a>
+        <div class="header-container">
+            <a href="index.html" class="logo">지감모</a>
+            <div class="nav-links">
+                <a href="01.html" class="menu-item">지감모 소개</a>
+                <a href="02.html" class="menu-item">활동 내역</a>
+                <a href="03.html" class="menu-item">후원 안내</a>
+            </div>
         </div>
     </header>
 
+    <!-- 중앙 정렬을 위한 1000px 컨테이너 -->
     <main class="container">
         
         <!-- 대문(Hero) 영역 -->
@@ -274,41 +282,37 @@
             함께 소통하고 봉사하며 더 나은 마을을 만들어갑니다.</p>
         </section>
 
-        <!-- 임시 커뮤니티 시각 자료 (무료 이미지) -->
-        <img src="https://images.unsplash.com/photo-1593113563332-dfa929bc2b48?auto=format&fit=crop&w=1000&q=80" alt="함께하는 공동체 모습" class="community-img">
+        <!-- 공동체 모습 시각 자료 -->
+        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1000&auto=format&fit=crop" alt="함께하는 공동체 모습" class="community-img">
 
-        <!-- 주요 활동 안내 (정관 내용 요약 적용) -->
+        <!-- 주요 활동 안내 -->
         <section class="activity-section">
             <h3>우리는 이런 활동을 합니다</h3>
             <div class="activity-grid">
-                <!-- 활동 1 -->
                 <div class="activity-card">
                     <div class="activity-icon">🧹</div>
                     <div class="activity-title">환경 개선 및 마을 정화</div>
                     <p class="activity-desc">깨끗하고 쾌적한 감천2동을 위해 정기적인 마을 정화 활동을 진행합니다.</p>
                 </div>
-                <!-- 활동 2 -->
                 <div class="activity-card">
                     <div class="activity-icon">🤝</div>
                     <div class="activity-title">주민 봉사 및 돌봄</div>
                     <p class="activity-desc">도움이 필요한 이웃을 살피고, 따뜻한 마음을 나누는 돌봄 활동을 실천합니다.</p>
                 </div>
-                <!-- 활동 3 -->
                 <div class="activity-card">
                     <div class="activity-icon">🎨</div>
                     <div class="activity-title">역사·문화 보존</div>
                     <p class="activity-desc">우리 동네만의 소중한 문화유산을 지키고 널리 알리는 데 앞장섭니다.</p>
                 </div>
-                <!-- 활동 4 -->
                 <div class="activity-card">
-                    <div class="activity-title">🗣️</div>
+                    <div class="activity-icon">🗣️</div>
                     <div class="activity-title">주민 소통 및 교류</div>
                     <p class="activity-desc">워크숍과 행사를 통해 이웃 간의 끈끈한 정과 화합을 다집니다.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 회원 가입 안내 상자 (정관 내용 요약 적용) -->
+        <!-- 회원 가입 안내 상자 -->
         <div class="notice-box">
             <h3>🧡 감천2동 주민 여러분을 환영합니다!</h3>
             <p>지감모는 우리 마을을 사랑하는 분들의 참여를 기다리고 있습니다.</p>
