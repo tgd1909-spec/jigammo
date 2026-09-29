@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     
     <style>
-        /* 전체 배경 (부드러운 아이보리) */
+        /* 전체 배경 */
         body {
             background-color: #FDFBF7;
             font-family: 'Gowun Dodum', sans-serif;
@@ -20,52 +20,44 @@
             color: #333333;
         }
 
-        /* 상단 메뉴바 전체 영역 (메인 옐로우) */
+        /* 공통 상단 메뉴바(헤더) 시작 */
         header {
             background-color: #FFD166;
             padding: 30px 0;
             text-align: center;
         }
-
-        /* 메뉴바의 '지감모' 큰 로고 글씨 */
         header .logo {
             font-size: 32px;
             font-weight: bold;
-            color: #D35400; /* 진한 오렌지 */
+            color: #D35400; 
             margin-bottom: 20px;
             display: block;
             text-decoration: none;
         }
-
-        /* 메뉴 링크들을 가로로 예쁘게 띄워주는 역할 */
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 50px; /* PC화면을 위해 메뉴 사이 간격을 널찍하게 벌렸어요 */
+            gap: 50px; 
         }
-
-        /* 기본 메뉴 글씨 스타일 */
         header a.menu-item {
-            color: #A04000; /* 살짝 톤 다운된 오렌지로 차분하게 */
+            color: #A04000; 
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
             padding-bottom: 5px;
             transition: color 0.3s;
         }
-
-        /* ★현재 보고 있는 페이지(지감모 소개)만 강조하는 스타일★ */
+        /* 현재 보고 있는 페이지 메뉴 강조 */
         header a.active {
-            color: #D35400; /* 진한 오렌지색으로 돋보이게 */
-            border-bottom: 3px solid #D35400; /* 밑줄 쫙! */
+            color: #D35400; 
+            border-bottom: 3px solid #D35400; 
         }
-
-        /* 마우스 올렸을 때 색상 변화 */
         header a.menu-item:hover {
             color: #FF9F1C; 
         }
+        /* 공통 상단 메뉴바(헤더) 끝 */
 
-        /* 하얀색 메인 내용 상자 - PC 화면에 맞춰 가로 1000px로 널찍하게 키웠어요! */
+        /* 하얀색 메인 내용 상자 */
         .content-box {
             max-width: 1000px; 
             margin: 50px auto;
@@ -75,40 +67,36 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        /* 새롭게 추가된 소개 사진 영역 */
+        /* 소개 사진 영역 */
         .intro-image {
             width: 100%;
-            height: 400px; /* 사진 높이 */
-            background-color: #FFE8D6; /* 연한 살구색 배경 */
+            height: 400px;
+            background-color: #FFE8D6;
             border-radius: 15px;
             margin-bottom: 50px;
             overflow: hidden;
         }
-        
-        /* 사진이 상자에 꽉 차고 예쁘게 잘리도록 하는 마법 */
         .intro-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* 큰 제목 */
+        /* 제목 스타일 */
         h1 {
             color: #D35400;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             font-size: 32px;
         }
-        
-        /* 제목 아래 짧은 소개글 */
         .subtitle {
             text-align: center;
-            color: #666;
+            color: #D35400;
+            font-weight: bold;
             margin-bottom: 50px;
             font-size: 18px;
         }
 
-        /* 중간 제목 */
         h2 {
             color: #D35400;
             border-bottom: 3px solid #FF9F1C;
@@ -117,30 +105,67 @@
             font-size: 24px;
         }
 
-        /* 일반 글씨 */
         p {
             line-height: 1.8;
             font-size: 17px;
             margin-bottom: 20px;
         }
 
-        /* ★PC화면 마법: 핵심 가치 상자들을 3칸으로 나란히 배치하기★ */
-        .values-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 화면을 공평하게 3등분 합니다 */
-            gap: 20px; /* 상자 사이의 간격 */
-            margin-top: 30px;
+        /* 추가된 주요 사업 목록 스타일 (하트 모양 기호) */
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+        .activity-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        .activity-list li::before {
+            content: '♥';
+            color: #FF9F1C;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 18px;
         }
 
-        /* 핵심 가치 안내 박스 모양 수정 */
+        /* 추가된 회원 가입 안내 점선 박스 */
+        .info-box {
+            background-color: #FDFBF7;
+            border: 2px dashed #FFD166;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .info-box p {
+            margin-bottom: 12px;
+        }
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+        .info-box strong {
+            color: #D35400;
+            margin-right: 10px;
+        }
+
+        /* 핵심 가치 3칸 배치 */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
         .value-box {
             background-color: #FFE8D6;
-            border-top: 6px solid #FF9F1C; /* 위쪽에 포인트 선을 넣었어요 */
+            border-top: 6px solid #FF9F1C; 
             padding: 30px 20px;
             border-radius: 8px;
-            text-align: center; /* 글씨를 가운데로 예쁘게 모았습니다 */
+            text-align: center; 
         }
-        
         .value-box strong {
             color: #D35400;
             font-size: 20px;
@@ -148,27 +173,27 @@
             margin-bottom: 15px;
         }
 
-        /* 스마트폰이나 창을 좁게 봤을 때 자동으로 세로로 쌓이게 도와주는 똑똑한 코드 */
+        /* 모바일 화면 조정 */
         @media (max-width: 768px) {
             .values-container {
-                grid-template-columns: 1fr; /* 다시 1줄로 변경 */
+                grid-template-columns: 1fr;
             }
             .content-box {
                 margin: 20px;
                 padding: 30px;
+            }
+            .nav-links {
+                gap: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- 상단 메뉴바 -->
+    <!-- 공통 상단 메뉴바(헤더) -->
     <header>
-        <!-- 첫 화면으로 가는 큰 로고 역할 -->
         <a href="index.html" class="logo">지감모</a>
-        
         <div class="nav-links">
-            <!-- class="active"가 적힌 이 부분만 현재 색이 진하게 보입니다 -->
             <a href="01.html" class="menu-item active">지감모 소개</a>
             <a href="02.html" class="menu-item">활동 내역</a>
             <a href="03.html" class="menu-item">후원 안내</a>
@@ -178,23 +203,40 @@
     <!-- 메인 내용 -->
     <div class="content-box">
         
-        <!-- 제안드리는 큰 사진 영역입니다! -->
+        <!-- 사진 영역 -->
         <div class="intro-image">
-            <!-- src="" 안의 인터넷 주소가 임시 사진입니다. 나중에 이 주소만 진짜 사진 주소로 쏙 바꿔주시면 됩니다! -->
             <img src="https://images.unsplash.com/photo-1594775438183-b79e27c15243?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="감천2동 따뜻한 풍경">
         </div>
 
         <h1>지감모, 우리는 누구인가요?</h1>
-        <p class="subtitle">따뜻한 마음을 나누는 감천2동 봉사단체 '지감모'입니다.</p>
+        <!-- 정관 내용: 명칭 -->
+        <p class="subtitle">지성이면 감천, 마음이 모이는 곳</p>
 
-        <h2>우리의 설립 취지</h2>
-        <p>지감모는 오직 감천2동 주민들이 주인공이 되어, 우리가 매일 걷고 숨 쉬는 동네를 더 밝고 살기 좋은 곳으로 직접 가꾸어 나가기 위해 시작되었습니다. 이웃 간의 정을 나누고, 서로 돕는 문화를 통해 우리 동네만의 끈끈하고 특별한 공동체를 만드는 것이 우리의 가장 큰 목표입니다.</p>
+        <h2>우리의 설립 목적</h2>
+        <!-- 정관 내용: 목적 -->
+        <p>지감모는 감천2동의 환경 개선, 공동체 활성화, 문화유산 보존, 주민 소통 및 봉사활동을 통해 살기 좋은 감천을 만드는 것을 목적으로 모였습니다. 오직 감천2동 주민들이 주인공이 되어, 우리가 매일 걷고 숨 쉬는 동네를 직접 가꾸어 나갑니다.</p>
 
-        <h2>감천2동에서 만들어가는 긍정적인 변화</h2>
-        <p>우리가 함께 땀 흘린 시간들은 감천2동의 골목길을 더 깨끗하고 환하게 만들었고, 홀로 계신 어르신들의 얼굴에 따뜻한 미소를 찾아드렸습니다. 주민 한 분 한 분의 작은 나눔이 모여, 지금 이 순간에도 감천2동 전체에 기분 좋은 활기를 불어넣고 있습니다.</p>
+        <h2>우리가 하는 일</h2>
+        <p>살기 좋은 감천을 만들기 위해 우리는 다음과 같은 활동을 활발히 수행합니다.</p>
+        <!-- 정관 내용: 주요 사업 내용 반영 -->
+        <ul class="activity-list">
+            <li>마을 정화 및 환경 개선 활동</li>
+            <li>지역 주민 대상 봉사 및 돌봄 활동</li>
+            <li>감천의 역사·문화 보존과 홍보</li>
+            <li>주민 간 교류 행사 및 워크숍</li>
+            <li>감천2동 발전을 위한 제안 및 연계 활동</li>
+        </ul>
+
+        <h2>함께할 수 있는 회원 자격</h2>
+        <p>지감모의 취지에 동의하고, 따뜻한 마음으로 활동에 참여하실 이웃분들을 환영합니다!</p>
+        <!-- 정관 내용: 회원 자격 및 권리와 의무 -->
+        <div class="info-box">
+            <p><strong>가입 자격</strong> 감천2동에 거주하시는 만 20세 이상 70세 이하 주민</p>
+            <p><strong>회원 의무</strong> 연 3회 이상 단체 활동 필수 참여</p>
+            <p><strong>회비 안내</strong> 매월 5,000원 (총무를 통해 투명하게 관리 및 분기별 보고)</p>
+        </div>
 
         <h2>우리의 핵심 가치</h2>
-        <!-- PC 화면에서 3개가 나란히 나오는 컨테이너 -->
         <div class="values-container">
             <div class="value-box">
                 <strong>1. 따뜻한 이웃 사랑</strong>
