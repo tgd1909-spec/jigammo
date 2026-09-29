@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
     
     <style>
-        /* 전체 배경 */
+        /* 1. 기본 설정 */
         body {
             background-color: #FDFBF7;
             font-family: 'Gowun Dodum', sans-serif;
@@ -20,44 +20,56 @@
             color: #333333;
         }
 
-        /* 공통 상단 메뉴바(헤더) 시작 */
+        /* 2. 공통 헤더(Header) 디자인 */
         header {
             background-color: #FFD166;
-            padding: 30px 0;
-            text-align: center;
+            /* 헤더 아래에 살짝 그림자를 주어 입체감을 살렸어요! */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
         }
+        
+        /* 헤더 안의 내용이 너무 퍼지지 않게 잡아주는 1000px 컨테이너 */
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto; /* 화면 가운데 정렬 */
+            display: flex;
+            justify-content: space-between; /* 로고는 왼쪽, 메뉴는 오른쪽으로 */
+            align-items: center; /* 위아래 중앙 맞춤 */
+            padding: 20px;
+        }
+
         header .logo {
             font-size: 32px;
             font-weight: bold;
             color: #D35400; 
-            margin-bottom: 20px;
-            display: block;
-            text-decoration: none;
+            text-decoration: none; /* 밑줄 없음 */
         }
+        
         .nav-links {
             display: flex;
-            justify-content: center;
-            gap: 50px; 
+            gap: 20px; /* 메뉴 간 간격 20px */
         }
+        
         header a.menu-item {
-            color: #A04000; 
+            color: #555555; /* 메뉴 글자색 */
             text-decoration: none;
             font-weight: bold;
             font-size: 18px;
             padding-bottom: 5px;
             transition: color 0.3s;
         }
-        /* 현재 보고 있는 페이지 메뉴 강조 */
+        
+        /* 마우스 올렸을 때(Hover) 효과 */
+        header a.menu-item:hover {
+            color: #FF9F1C; 
+        }
+        
+        /* 현재 머무는 페이지(Active) 효과 */
         header a.active {
             color: #D35400; 
             border-bottom: 3px solid #D35400; 
         }
-        header a.menu-item:hover {
-            color: #FF9F1C; 
-        }
-        /* 공통 상단 메뉴바(헤더) 끝 */
 
-        /* 하얀색 메인 내용 상자 */
+        /* 하얀색 메인 내용 상자 (최대 너비 1000px, 가운데 정렬) */
         .content-box {
             max-width: 1000px; 
             margin: 50px auto;
@@ -65,6 +77,9 @@
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            /* 모바일 화면을 위해 화면 양옆에 여유 공간을 조금 줍니다 */
+            box-sizing: border-box; 
+            width: 90%;
         }
 
         /* 소개 사진 영역 */
@@ -82,7 +97,7 @@
             object-fit: cover;
         }
 
-        /* 제목 스타일 */
+        /* 본문 제목 및 글씨 스타일 */
         h1 {
             color: #D35400;
             text-align: center;
@@ -96,7 +111,6 @@
             margin-bottom: 50px;
             font-size: 18px;
         }
-
         h2 {
             color: #D35400;
             border-bottom: 3px solid #FF9F1C;
@@ -104,7 +118,6 @@
             margin-top: 50px;
             font-size: 24px;
         }
-
         p {
             line-height: 1.8;
             font-size: 17px;
@@ -154,17 +167,26 @@
             margin-bottom: 15px;
         }
 
-        /* 모바일 화면 조정 */
+        /* 3. 공통 푸터(Footer) 디자인 */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #FFE8D6;
+            padding: 40px 20px;
+            text-align: center;
+            color: #888888;
+        }
+
+        /* 모바일 반응형 디자인 (화면 너비 768px 이하일 때) */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column; /* 헤더 요소를 세로 방향으로 */
+                gap: 15px; /* 로고와 메뉴 사이 간격 */
+            }
             .values-container {
                 grid-template-columns: 1fr;
             }
             .content-box {
-                margin: 20px;
                 padding: 30px;
-            }
-            .nav-links {
-                gap: 20px;
             }
         }
     </style>
@@ -173,11 +195,13 @@
 
     <!-- 공통 상단 메뉴바(헤더) -->
     <header>
-        <a href="index.html" class="logo">지감모</a>
-        <div class="nav-links">
-            <a href="01.html" class="menu-item active">지감모 소개</a>
-            <a href="02.html" class="menu-item">활동 내역</a>
-            <a href="03.html" class="menu-item">후원 안내</a>
+        <div class="header-container">
+            <a href="index.html" class="logo">지감모</a>
+            <div class="nav-links">
+                <a href="01.html" class="menu-item active">지감모 소개</a>
+                <a href="02.html" class="menu-item">활동 내역</a>
+                <a href="03.html" class="menu-item">후원 안내</a>
+            </div>
         </div>
     </header>
 
@@ -197,7 +221,6 @@
 
         <h2>우리가 하는 일</h2>
         <p>살기 좋은 감천을 만들기 위해 우리는 다음과 같은 활동을 활발히 수행합니다.</p>
-        <!-- 지역 일자리 창출 내용이 추가되었습니다! -->
         <ul class="activity-list">
             <li>마을 정화 및 환경 개선 활동</li>
             <li>지역 주민 대상 봉사 및 돌봄 활동</li>
@@ -223,6 +246,11 @@
             </div>
         </div>
     </div>
+
+    <!-- 3. 공통 푸터(Footer) -->
+    <footer>
+        © 2026 지감모 (부산 감천2동 봉사단체). All rights reserved.
+    </footer>
 
 </body>
 </html>
