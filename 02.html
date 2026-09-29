@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지감모 - 활동 내용</title>
+    
+    <!-- 고운돋움 폰트를 자동으로 불러오는 마법의 코드입니다 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        /* 부드러운 아이보리 (전체 배경) */
+        body {
+            background-color: #FDFBF7; 
+            margin: 0;
+            font-family: 'Gowun Dodum', sans-serif; /* 고운돋움 폰트 적용! */
+            color: #333;
+        }
+
+        /* 메인 옐로우 (상단바) */
+        header {
+            background-color: #FFD166; 
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        nav a {
+            color: #333; /* 노란 배경에 잘 보이도록 진한 회색 글씨 */
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0 20px;
+            padding: 10px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        /* 메뉴에 마우스를 올렸을 때: 메인 오렌지 색상으로 변경 */
+        nav a:hover {
+            background-color: #FF9F1C; 
+            color: white;
+        }
+
+        /* 진한 오렌지 (큰 제목) */
+        h1 {
+            text-align: center;
+            color: #D35400;
+            margin-top: 40px;
+            font-size: 32px;
+        }
+
+        /* 연한 살구색 (안내 박스 배경) */
+        .info-box {
+            background-color: #FFE8D6;
+            color: #D35400;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* 갤러리(사진첩) 전체 틀 설정 */
+        .gallery-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* 사진 하나하나가 들어갈 네모 상자 (카드) */
+        .gallery-card {
+            background-color: white;
+            border: 2px solid #FFE8D6; /* 테두리는 연한 살구색 */
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        /* 카드에 마우스를 올렸을 때 살짝 떠오르는 효과 */
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 159, 28, 0.2);
+        }
+
+        /* 사진 이미지 설정 */
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* 사진 아래 글씨(설명) 설정 */
+        .gallery-text {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        /* 카드 안의 작은 제목 (메인 오렌지) */
+        .gallery-text h3 {
+            margin: 0 0 10px 0;
+            color: #FF9F1C; 
+            font-size: 22px;
+        }
+
+        .gallery-text p {
+            margin: 0;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* 맨 아래 꼬리말 (메인 옐로우) */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: #FFD166;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 위쪽 메뉴바 시작 -->
+    <header>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="02.html">활동 내용</a>
+            <a href="03.html">참여 및 후원 안내</a>
+        </nav>
+    </header>
+    <!-- 위쪽 메뉴바 끝 -->
+
+    <!-- 진한 오렌지색 큰 제목 -->
+    <h1>지감모 따뜻한 활동 기록</h1>
+
+    <!-- 연한 살구색 안내 박스 -->
+    <div class="info-box">
+        지성이면 감천, 마음이 모이는 곳! 지감모의 따뜻한 나눔 활동을 사진으로 만나보세요.
+    </div>
+
+    <!-- 사진 갤러리 시작 -->
+    <div class="gallery-container">
+        
+        <!-- ▼▼▼ 새로운 활동을 추가할 때는 여기서부터 ▼▼▼ -->
+        <div class="gallery-card">
+            <!-- 아래 주소는 임시 이미지입니다. 나중에 진짜 사진 이름으로 바꾸면 됩니다. -->
+            <img src="https://picsum.photos/400/300?random=1" alt="활동 사진 1">
+            <div class="gallery-text">
+                <h3>마을 환경 정화 활동</h3>
+                <p>감천2동 골목길을 구석구석 청소하며 깨끗한 마을을 만들었습니다.</p>
+            </div>
+        </div>
+        <!-- ▲▲▲ 여기까지 복사해서 아래에 붙여넣기 하시면 됩니다! ▲▲▲ -->
+
+        <!-- 두 번째 사진 카드 -->
+        <div class="gallery-card">
+            <img src="https://picsum.photos/400/300?random=2" alt="활동 사진 2">
+            <div class="gallery-text">
+                <h3>어르신 반찬 나눔</h3>
+                <p>정성스럽게 만든 반찬을 홀로 계신 어르신들께 전달해 드렸습니다.</p>
+            </div>
+        </div>
+
+        <!-- 세 번째 사진 카드 -->
+        <div class="gallery-card">
+            <img src="https://picsum.photos/400/300?random=3" alt="활동 사진 3">
+            <div class="gallery-text">
+                <h3>겨울철 연탄 배달</h3>
+                <p>추운 겨울을 따뜻하게 보내실 수 있도록 이웃들에게 연탄을 나눴습니다.</p>
+            </div>
+        </div>
+
+        <!-- 네 번째 사진 카드 -->
+        <div class="gallery-card">
+            <img src="https://picsum.photos/400/300?random=4" alt="활동 사진 4">
+            <div class="gallery-text">
+                <h3>마을 축제 지원</h3>
+                <p>주민 모두가 함께 즐기는 감천2동 마을 축제에서 안내 봉사를 진행했습니다.</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- 사진 갤러리 끝 -->
+
+    <!-- 맨 아래 꼬리말 시작 -->
+    <footer>
+        사랑과 온기가 넘치는 감천2동, 지감모가 함께합니다.
+    </footer>
+    <!-- 맨 아래 꼬리말 끝 -->
+
+</body>
+</html>
