@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>지감모 - 지성이면 감천, 마음이 모이는 곳</title>
     
-    <!-- [폰트 가져오기] 고운돋움(Gowun Dodum) 폰트 -->
+    <!-- [폰트 가져오기] 따뜻한 느낌의 '고운돋움(Gowun Dodum)' 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -37,8 +37,6 @@
             background-color: #FFD166; /* 메인 옐로우 */
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            
-            /* 로고와 메뉴를 양끝으로 배치하는 설정 */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -53,7 +51,7 @@
 
         header .nav-links {
             display: flex;
-            gap: 20px; /* 메뉴 사이 간격 */
+            gap: 20px;
         }
 
         header .menu-item {
@@ -65,61 +63,118 @@
             transition: all 0.3s ease;
         }
 
-        /* 마우스를 올렸을 때의 메뉴 색상 */
         header .menu-item:hover {
             color: #FF9F1C; /* 메인 오렌지 */
         }
 
-        /* 현재 머무는 페이지(활성화된 메뉴)의 디자인 */
         header .menu-item.active {
             color: #D35400; /* 진한 오렌지 */
             border-bottom: 3px solid #D35400; /* 진한 오렌지색 밑줄 */
         }
 
         /* =========================================
-           3. 메인 콘텐츠 영역 (Hero 및 안내 박스)
+           3. 메인 콘텐츠 영역 (Hero)
            ========================================= */
         .hero {
             background-color: #FFE8D6; /* 연한 살구색 배경 */
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
             margin-top: 40px;
             border-radius: 20px;
             box-shadow: 0 4px 15px rgba(255, 159, 28, 0.1);
         }
 
-        /* 공식 로고 이미지 설정 */
         .official-logo {
-            max-width: 350px; /* 로고 최대 크기 제한 */
-            width: 100%; /* 모바일에서는 화면에 맞게 줄어듦 */
+            max-width: 350px;
+            width: 100%;
             height: auto;
-            margin-bottom: 30px;
-            /* 흰색 배경을 가진 jpg 로고가 자연스럽게 스며들도록 하는 효과 */
-            mix-blend-mode: multiply; 
+            margin-bottom: 20px;
+            mix-blend-mode: multiply; /* 흰색 배경을 자연스럽게 섞어줍니다 */
         }
 
         .hero h2 {
             color: #D35400;
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 20px;
             color: #444444;
         }
 
-        .hero strong {
-            color: #FF9F1C; /* 강조 텍스트 메인 오렌지색 */
+        /* =========================================
+           4. 주요 활동 안내 (정관 제4조 요약)
+           ========================================= */
+        .activity-section {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .activity-section h3 {
+            color: #D35400;
+            font-size: 28px;
+            margin-bottom: 30px;
         }
 
+        .activity-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* PC에서는 2칸씩 나란히 */
+            gap: 20px;
+        }
+
+        .activity-card {
+            background-color: #FFFFFF;
+            border: 2px solid #FFD166;
+            border-radius: 15px;
+            padding: 30px 20px;
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            border-color: #FF9F1C;
+            transform: translateY(-5px); /* 마우스를 올리면 살짝 위로 떠오릅니다 */
+            box-shadow: 0 6px 12px rgba(255, 159, 28, 0.15);
+        }
+
+        .activity-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .activity-title {
+            color: #D35400;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .activity-desc {
+            color: #555555;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* 임시 이미지(Unsplash) 영역 */
+        .community-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* =========================================
+           5. 가입 안내 박스 (정관 제5, 6조 요약)
+           ========================================= */
         .notice-box {
-            background-color: #FDFBF7; /* 박스 안쪽은 아이보리색으로 대비 */
+            background-color: #FDFBF7;
             border: 2px solid #FF9F1C; /* 메인 오렌지색 테두리 */
             border-radius: 15px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 40px auto 0 auto;
+            padding: 40px 30px;
+            max-width: 700px;
+            margin: 60px auto 0 auto;
             text-align: center;
         }
 
@@ -131,11 +186,35 @@
 
         .notice-box p {
             font-size: 18px;
-            margin-bottom: 0;
+            margin-bottom: 20px;
+        }
+
+        /* 체크리스트 스타일 */
+        .notice-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: left;
+            display: inline-block;
+            font-size: 17px;
+            color: #444444;
+        }
+
+        .notice-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .notice-list li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
         /* =========================================
-           4. 꼬리말 (Footer)
+           6. 꼬리말 (Footer)
            ========================================= */
         footer {
             text-align: center;
@@ -146,25 +225,27 @@
         }
 
         /* =========================================
-           5. 모바일 반응형 설정 (스마트폰 화면)
+           7. 모바일 반응형 설정 (스마트폰 화면)
            ========================================= */
         @media screen and (max-width: 768px) {
             header {
-                flex-direction: column; /* 메뉴를 세로로 쌓기 */
+                flex-direction: column;
                 gap: 15px;
             }
             .hero {
-                padding: 50px 20px;
-                margin-top: 20px;
+                padding: 40px 20px;
             }
             .hero h2 {
-                font-size: 28px;
+                font-size: 26px;
             }
-            .hero p {
-                font-size: 18px;
+            .activity-grid {
+                grid-template-columns: 1fr; /* 스마트폰에서는 1칸씩 세로로 */
             }
-            .official-logo {
-                max-width: 250px; /* 모바일에서는 로고 크기를 조금 줄임 */
+            .community-img {
+                height: 200px;
+            }
+            .notice-box {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -172,7 +253,6 @@
 <body>
 
     <!-- [공통 HTML 헤더 뼈대] -->
-    <!-- 메인 랜딩 페이지(index.html)이므로 현재 01, 02, 03 메뉴에는 active 클래스가 없습니다. -->
     <header>
         <a href="index.html" class="logo">지감모</a>
         <div class="nav-links">
@@ -182,25 +262,62 @@
         </div>
     </header>
 
-    <!-- 최대 너비 1000px를 유지해주는 컨테이너 -->
     <main class="container">
         
         <!-- 대문(Hero) 영역 -->
         <section class="hero">
-            <!-- 사용자 업로드 로고가 들어가는 자리입니다 -->
+            <!-- 사용자 업로드 로고 -->
             <img src="logo.jpg" alt="지감모 공식 로고" class="official-logo">
             
-            <h2>지성이면 감천, 마음이 모이는 곳</h2>
-            <p>따뜻한 마음을 나누는 부산 감천2동 봉사단체 <strong>'지감모'</strong>에 오신 것을 환영합니다.<br>
-            우리 마을의 작은 정성이 모여 큰 기적을 만듭니다.</p>
+            <h2>살기 좋은 감천을 만드는 우리들의 이야기</h2>
+            <p>감천2동의 발전을 위해 따뜻한 이웃들이 모였습니다.<br>
+            함께 소통하고 봉사하며 더 나은 마을을 만들어갑니다.</p>
+        </section>
 
-            <!-- 감천2동 주민 안내 상자 -->
-            <div class="notice-box">
-                <h3>🧡 감천2동 주민 여러분을 환영합니다!</h3>
-                <p>지감모는 감천2동 주민분들을 멤버로 모시고 있습니다.<br>
-                함께 따뜻한 동네를 만들어갈 이웃들의 참여를 기다립니다.</p>
+        <!-- 임시 커뮤니티 시각 자료 (무료 이미지) -->
+        <img src="https://images.unsplash.com/photo-1593113563332-dfa929bc2b48?auto=format&fit=crop&w=1000&q=80" alt="함께하는 공동체 모습" class="community-img">
+
+        <!-- 주요 활동 안내 (정관 내용 요약 적용) -->
+        <section class="activity-section">
+            <h3>우리는 이런 활동을 합니다</h3>
+            <div class="activity-grid">
+                <!-- 활동 1 -->
+                <div class="activity-card">
+                    <div class="activity-icon">🧹</div>
+                    <div class="activity-title">환경 개선 및 마을 정화</div>
+                    <p class="activity-desc">깨끗하고 쾌적한 감천2동을 위해 정기적인 마을 정화 활동을 진행합니다.</p>
+                </div>
+                <!-- 활동 2 -->
+                <div class="activity-card">
+                    <div class="activity-icon">🤝</div>
+                    <div class="activity-title">주민 봉사 및 돌봄</div>
+                    <p class="activity-desc">도움이 필요한 이웃을 살피고, 따뜻한 마음을 나누는 돌봄 활동을 실천합니다.</p>
+                </div>
+                <!-- 활동 3 -->
+                <div class="activity-card">
+                    <div class="activity-icon">🎨</div>
+                    <div class="activity-title">역사·문화 보존</div>
+                    <p class="activity-desc">우리 동네만의 소중한 문화유산을 지키고 널리 알리는 데 앞장섭니다.</p>
+                </div>
+                <!-- 활동 4 -->
+                <div class="activity-card">
+                    <div class="activity-title">🗣️</div>
+                    <div class="activity-title">주민 소통 및 교류</div>
+                    <p class="activity-desc">워크숍과 행사를 통해 이웃 간의 끈끈한 정과 화합을 다집니다.</p>
+                </div>
             </div>
         </section>
+
+        <!-- 회원 가입 안내 상자 (정관 내용 요약 적용) -->
+        <div class="notice-box">
+            <h3>🧡 감천2동 주민 여러분을 환영합니다!</h3>
+            <p>지감모는 우리 마을을 사랑하는 분들의 참여를 기다리고 있습니다.</p>
+            <ul class="notice-list">
+                <li><strong>가입 자격:</strong> 감천2동 거주자 (만 20세 ~ 70세 이하)</li>
+                <li><strong>회원 의무:</strong> 연 3회 이상 활동 참여 및 회칙 준수</li>
+                <li><strong>월 회비:</strong> 5,000원 (회계 투명성 보장)</li>
+            </ul>
+        </div>
 
     </main>
 
