@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지감모 - 활동 내용</title>
+    <title>지감모 - 활동 내역</title>
     
-    <!-- 고운돋움 폰트를 자동으로 불러오는 코드입니다 -->
+    <!-- 고운돋움 폰트를 자동으로 불러옵니다 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <style>
-        /* [이전 스타일 유지] */
+        /* =========================================
+           1. 폰트 및 기본 설정
+           ========================================= */
         body {
             background-color: #FDFBF7; 
             margin: 0;
@@ -19,32 +21,79 @@
             color: #333;
         }
 
+        /* 메인 컨테이너 레이아웃 (최대 너비 1000px, 가운데 정렬) */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =========================================
+           2. 공통 헤더 (Header) 디자인
+           ========================================= */
         header {
             background-color: #FFD166; 
-            padding: 15px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 하단 그림자 */
             position: sticky;
             top: 0;
             z-index: 100;
         }
         
-        nav a {
-            color: #333; 
-            text-decoration: none;
+        .header-container {
+            max-width: 1000px; /* 헤더 내부 컨테이너 */
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* 로고 텍스트 */
+        .logo {
+            color: #D35400;
+            font-size: 32px;
+            font-weight: bold;
+            text-decoration: none; /* 밑줄 없음 */
+        }
+
+        /* 메뉴 그룹 */
+        nav {
+            display: flex;
+            gap: 20px; /* 메뉴 간 간격 20px */
+        }
+
+        /* 개별 메뉴 텍스트 */
+        .menu-item {
+            color: #555555; 
             font-size: 18px;
             font-weight: bold;
-            margin: 0 20px;
-            padding: 10px 15px;
-            border-radius: 20px;
+            text-decoration: none;
+            padding: 5px 0;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            background-color: #FF9F1C; 
-            color: white;
+        /* 메뉴 Hover 효과 (마우스 올렸을 때) */
+        .menu-item:hover {
+            color: #FF9F1C; 
         }
 
+        /* 메뉴 Active 효과 (현재 머무는 페이지) */
+        .menu-item.active {
+            color: #D35400;
+            border-bottom: 3px solid #D35400; /* 하단 테두리 3px */
+        }
+
+        /* 모바일 반응형 (화면이 작아지면 세로로 중앙 정렬) */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* =========================================
+           활동 내역 본문 및 갤러리 디자인 (기존 유지)
+           ========================================= */
         h1 {
             text-align: center;
             color: #D35400;
@@ -56,7 +105,7 @@
             background-color: #FFE8D6;
             color: #D35400;
             max-width: 800px;
-            margin: 20px auto;
+            margin: 20px auto 40px auto;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -64,12 +113,10 @@
         }
 
         .gallery-container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            margin-bottom: 40px;
         }
 
         .gallery-card {
@@ -79,7 +126,7 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.05);
             transition: transform 0.3s;
-            cursor: pointer; /* [추가] 마우스를 올렸을 때 클릭 가능하다는 표시 */
+            cursor: pointer; 
         }
 
         .gallery-card:hover {
@@ -111,18 +158,9 @@
             line-height: 1.5;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            background-color: #FFD166;
-            color: #333;
-            font-weight: bold;
-        }
-
-        /* [추가] 모달(팝업 창) 스타일 시작 */
+        /* 모달(팝업 창) 스타일 */
         .modal {
-            display: none; /* 기본적으로 숨겨둠 */
+            display: none; 
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -130,7 +168,7 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7); /* 반투명 검은색 배경 */
+            background-color: rgba(0, 0, 0, 0.7); 
         }
 
         .modal-content {
@@ -175,108 +213,127 @@
             line-height: 1.6;
             text-align: justify;
         }
-        /* 모달 스타일 끝 */
+
+        /* =========================================
+           3. 공통 푸터 (Footer) 디자인
+           ========================================= */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #FFE8D6;
+            padding: 40px 20px;
+            text-align: center;
+            color: #888888;
+        }
     </style>
 </head>
 <body>
 
+    <!-- ================= 공통 헤더 시작 ================= -->
     <header>
-        <nav>
-            <a href="index.html">홈</a>
-            <a href="02.html">활동 내용</a>
-            <a href="03.html">참여 및 후원 안내</a>
-        </nav>
+        <div class="header-container">
+            <!-- 로고를 누르면 index.html로 이동합니다 -->
+            <a href="index.html" class="logo">지감모</a>
+            
+            <nav>
+                <a href="index.html" class="menu-item">지감모 소개</a>
+                <!-- 현재 페이지이므로 class에 active를 추가했습니다 -->
+                <a href="02.html" class="menu-item active">활동 내역</a>
+                <a href="03.html" class="menu-item">후원 안내</a>
+            </nav>
+        </div>
     </header>
+    <!-- ================= 공통 헤더 끝 ================= -->
 
-    <h1>지감모 따뜻한 활동 기록</h1>
-
-    <div class="info-box">
-        지성이면 감천, 마음이 모이는 곳! 지감모의 따뜻한 나눔 활동을 사진으로 만나보세요.
-    </div>
-
-    <!-- 사진 갤러리 시작 -->
-    <div class="gallery-container">
+    <!-- ================= 메인 콘텐츠 시작 ================= -->
+    <main class="main-container">
         
-        <!-- [마법의 onClick 코드가 추가되었습니다] -->
-        <div class="gallery-card" onClick="openModal(this)">
-            <img src="https://picsum.photos/400/300?random=1" alt="활동 사진 1">
-            <div class="gallery-text">
-                <h3>마을 환경 정화 활동</h3>
-                <p>감천2동 골목길을 구석구석 청소하며 깨끗한 마을을 만들었습니다.</p>
-            </div>
+        <h1>지감모 따뜻한 활동 기록</h1>
+
+        <div class="info-box">
+            지성이면 감천, 마음이 모이는 곳! 지감모의 따뜻한 나눔 활동을 사진으로 만나보세요.
         </div>
 
-        <div class="gallery-card" onClick="openModal(this)">
-            <img src="https://picsum.photos/400/300?random=2" alt="활동 사진 2">
-            <div class="gallery-text">
-                <h3>어르신 반찬 나눔</h3>
-                <p>정성스럽게 만든 반찬을 홀로 계신 어르신들께 전달해 드렸습니다.</p>
+        <!-- 사진 갤러리 시작 -->
+        <div class="gallery-container">
+            
+            <!-- 아래 사진 주소(src)를 깃허브에 올리신 진짜 사진 이름(예: photo1.jpg)으로 바꿔주세요! -->
+            <div class="gallery-card" onClick="openModal(this)">
+                <img src="https://picsum.photos/400/300?random=1" alt="활동 사진 1">
+                <div class="gallery-text">
+                    <h3>마을 환경 정화 활동</h3>
+                    <p>감천2동 골목길을 구석구석 청소하며 깨끗한 마을을 만들었습니다.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="gallery-card" onClick="openModal(this)">
-            <img src="https://picsum.photos/400/300?random=3" alt="활동 사진 3">
-            <div class="gallery-text">
-                <h3>겨울철 연탄 배달</h3>
-                <p>추운 겨울을 따뜻하게 보내실 수 있도록 이웃들에게 연탄을 나눴습니다.</p>
+            <div class="gallery-card" onClick="openModal(this)">
+                <img src="https://picsum.photos/400/300?random=2" alt="활동 사진 2">
+                <div class="gallery-text">
+                    <h3>어르신 반찬 나눔</h3>
+                    <p>정성스럽게 만든 반찬을 홀로 계신 어르신들께 전달해 드렸습니다.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="gallery-card" onClick="openModal(this)">
-            <img src="https://picsum.photos/400/300?random=4" alt="활동 사진 4">
-            <div class="gallery-text">
-                <h3>마을 축제 지원</h3>
-                <p>주민 모두가 함께 즐기는 감천2동 마을 축제에서 안내 봉사를 진행했습니다.</p>
+            <div class="gallery-card" onClick="openModal(this)">
+                <img src="https://picsum.photos/400/300?random=3" alt="활동 사진 3">
+                <div class="gallery-text">
+                    <h3>겨울철 연탄 배달</h3>
+                    <p>추운 겨울을 따뜻하게 보내실 수 있도록 이웃들에게 연탄을 나눴습니다.</p>
+                </div>
             </div>
+
+            <div class="gallery-card" onClick="openModal(this)">
+                <img src="https://picsum.photos/400/300?random=4" alt="활동 사진 4">
+                <div class="gallery-text">
+                    <h3>마을 축제 지원</h3>
+                    <p>주민 모두가 함께 즐기는 감천2동 마을 축제에서 안내 봉사를 진행했습니다.</p>
+                </div>
+            </div>
+
         </div>
+        <!-- 사진 갤러리 끝 -->
 
-    </div>
-    <!-- 사진 갤러리 끝 -->
+    </main>
+    <!-- ================= 메인 콘텐츠 끝 ================= -->
 
-    <!-- [추가] 모달(팝업 창) HTML 구조 -->
+    <!-- 모달(팝업 창) 구조 -->
     <div id="galleryModal" class="modal">
         <div class="modal-content">
             <span class="modal-close" onClick="closeModal()">&times;</span>
             <img id="modalImage" src="" alt="확대 이미지" class="modal-image">
             <h2 id="modalTitle" class="modal-title">활동 제목</h2>
-            <p id="modalDescription" class="modal-description">활동의 상세한 내용이 여기에 들어갑니다. 나중에 원하는 내용으로 채워주시면 됩니다.</p>
+            <p id="modalDescription" class="modal-description">활동 상세 내용</p>
         </div>
     </div>
 
+    <!-- ================= 공통 푸터 시작 ================= -->
     <footer>
-        사랑과 온기가 넘치는 감천2동, 지감모가 함께합니다.
+        © 2026 지감모 (부산 감천2동 봉사단체). All rights reserved.
     </footer>
+    <!-- ================= 공통 푸터 끝 ================= -->
 
-    <!-- [추가] 모달 기능을 작동시키는 JavaScript 코드 -->
+    <!-- 모달 기능 자바스크립트 -->
     <script>
-        // 모달 창 요소를 가져옵니다
         const modal = document.getElementById('galleryModal');
         const modalImage = document.getElementById('modalImage');
         const modalTitle = document.getElementById('modalTitle');
         const modalDescription = document.getElementById('modalDescription');
 
-        // 카드를 클릭했을 때 모달을 여는 함수입니다
         function openModal(element) {
-            // 클릭된 카드의 이미지 주소, 제목, 내용을 가져옵니다
             const cardImage = element.querySelector('img').src;
             const cardTitle = element.querySelector('h3').textContent;
             const cardText = element.querySelector('p').textContent;
 
-            // 모달 창에 내용을 채워 넣습니다
             modalImage.src = cardImage;
             modalTitle.textContent = cardTitle;
-            modalDescription.textContent = cardText; // 일단 카드에 있는 내용을 상세 내용으로 넣습니다.
+            modalDescription.textContent = cardText; 
 
-            // 모달 창을 화면에 표시합니다
             modal.style.display = 'block';
         }
 
-        // 'X' 버튼을 클릭했을 때 모달을 닫는 함수입니다
         function closeModal() {
             modal.style.display = 'none';
         }
 
-        // 모달 창 바깥쪽을 클릭했을 때도 모달을 닫습니다
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeModal();
